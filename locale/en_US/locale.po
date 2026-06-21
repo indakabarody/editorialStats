@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EditorialStatsPlugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-21 14:00+0000\n"
+"PO-Revision-Date: 2026-06-21 14:00+0000\n"
+"Last-Translator: Indaka Barody\n"
+"Language-Team: English\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "plugins.generic.editorialStats.displayName"
+msgstr "Editorial Stats Plugin"
+
+msgid "plugins.generic.editorialStats.description"
+msgstr "Displays editorial statistics on the journal homepage."
+
+msgid "plugins.generic.editorialStats.title"
+msgstr "Editorial Statistics"
+
+msgid "plugins.generic.editorialStats.totalSubmissions"
+msgstr "Total Submissions"
+
+msgid "plugins.generic.editorialStats.published"
+msgstr "Published"
+
+msgid "plugins.generic.editorialStats.inProgress"
+msgstr "In Progress"
+
+msgid "plugins.generic.editorialStats.declined"
+msgstr "Declined"
+
+msgid "plugins.generic.editorialStats.acceptanceRate"
+msgstr "Acceptance Rate"
+
+msgid "plugins.generic.editorialStats.avgDaysToPublish"
+msgstr "Avg. Days to Publish"
+
+msgid "plugins.generic.editorialStats.reviewsCompleted"
+msgstr "Reviews Completed"
+
+msgid "plugins.generic.editorialStats.activeReviewers"
+msgstr "Active Reviewers"
+
+msgid "plugins.generic.editorialStats.submissionsPerYear"
+msgstr "Submissions Per Year"
+
+msgid "plugins.generic.editorialStats.publishedPerSection"
+msgstr "Published Articles per Section"
+
+msgid "plugins.generic.editorialStats.section"
+msgstr "Section"
+
+msgid "plugins.generic.editorialStats.count"
+msgstr "Count"
+
+msgid "plugins.generic.editorialStats.submissions"
+msgstr "Submissions"
+
+msgid "plugins.generic.editorialStats.noData"
+msgstr "No data available."
+
+msgid "plugins.generic.editorialStats.settings"
+msgstr "Settings"
+
+msgid "plugins.generic.editorialStats.settings.description"
+msgstr "Choose which statistics to display on the journal homepage."
+
+msgid "plugins.generic.editorialStats.settings.showTotalSubmissions"
+msgstr "Show Total Submissions"
+
+msgid "plugins.generic.editorialStats.settings.showPublished"
+msgstr "Show Published"
+
+msgid "plugins.generic.editorialStats.settings.showInProgress"
+msgstr "Show In Progress"
+
+msgid "plugins.generic.editorialStats.settings.showDeclined"
+msgstr "Show Declined"
+
+msgid "plugins.generic.editorialStats.settings.showAcceptanceRate"
+msgstr "Show Acceptance Rate"
+
+msgid "plugins.generic.editorialStats.settings.showAvgDaysToPublish"
+msgstr "Show Avg. Days to Publish"
+
+msgid "plugins.generic.editorialStats.settings.showReviewsCompleted"
+msgstr "Show Reviews Completed"
+
+msgid "plugins.generic.editorialStats.settings.showActiveReviewers"
+msgstr "Show Active Reviewers"
+
+msgid "plugins.generic.editorialStats.settings.showSubmissionsPerYear"
+msgstr "Show Submissions Per Year"
+
+msgid "plugins.generic.editorialStats.settings.showPublishedPerSection"
+msgstr "Show Published Articles per Section"

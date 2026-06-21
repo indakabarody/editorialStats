@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EditorialStatsPlugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-21 14:00+0000\n"
+"PO-Revision-Date: 2026-06-21 14:00+0000\n"
+"Last-Translator: Indaka Barody\n"
+"Language-Team: Indonesian\n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "plugins.generic.editorialStats.displayName"
+msgstr "Plugin Editorial Stats"
+
+msgid "plugins.generic.editorialStats.description"
+msgstr "Menampilkan statistik editorial pada beranda jurnal."
+
+msgid "plugins.generic.editorialStats.title"
+msgstr "Statistik Editorial"
+
+msgid "plugins.generic.editorialStats.totalSubmissions"
+msgstr "Total Pengajuan"
+
+msgid "plugins.generic.editorialStats.published"
+msgstr "Diterbitkan"
+
+msgid "plugins.generic.editorialStats.inProgress"
+msgstr "Sedang Berjalan"
+
+msgid "plugins.generic.editorialStats.declined"
+msgstr "Ditolak"
+
+msgid "plugins.generic.editorialStats.acceptanceRate"
+msgstr "Tingkat Penerimaan"
+
+msgid "plugins.generic.editorialStats.avgDaysToPublish"
+msgstr "Rata-rata Hari Diterbitkan"
+
+msgid "plugins.generic.editorialStats.reviewsCompleted"
+msgstr "Ulasan Selesai"
+
+msgid "plugins.generic.editorialStats.activeReviewers"
+msgstr "Reviewer Aktif"
+
+msgid "plugins.generic.editorialStats.submissionsPerYear"
+msgstr "Pengajuan per Tahun"
+
+msgid "plugins.generic.editorialStats.publishedPerSection"
+msgstr "Artikel Diterbitkan per Bagian"
+
+msgid "plugins.generic.editorialStats.section"
+msgstr "Bagian"
+
+msgid "plugins.generic.editorialStats.count"
+msgstr "Jumlah"
+
+msgid "plugins.generic.editorialStats.submissions"
+msgstr "Pengajuan"
+
+msgid "plugins.generic.editorialStats.noData"
+msgstr "Tidak ada data."
+
+msgid "plugins.generic.editorialStats.settings"
+msgstr "Pengaturan"
+
+msgid "plugins.generic.editorialStats.settings.description"
+msgstr "Pilih statistik mana saja yang ingin ditampilkan pada beranda jurnal."
+
+msgid "plugins.generic.editorialStats.settings.showTotalSubmissions"
+msgstr "Tampilkan Total Pengajuan"
+
+msgid "plugins.generic.editorialStats.settings.showPublished"
+msgstr "Tampilkan Diterbitkan"
+
+msgid "plugins.generic.editorialStats.settings.showInProgress"
+msgstr "Tampilkan Sedang Berjalan"
+
+msgid "plugins.generic.editorialStats.settings.showDeclined"
+msgstr "Tampilkan Ditolak"
+
+msgid "plugins.generic.editorialStats.settings.showAcceptanceRate"
+msgstr "Tampilkan Tingkat Penerimaan"
+
+msgid "plugins.generic.editorialStats.settings.showAvgDaysToPublish"
+msgstr "Tampilkan Rata-rata Hari Diterbitkan"
+
+msgid "plugins.generic.editorialStats.settings.showReviewsCompleted"
+msgstr "Tampilkan Ulasan Selesai"
+
+msgid "plugins.generic.editorialStats.settings.showActiveReviewers"
+msgstr "Tampilkan Reviewer Aktif"
+
+msgid "plugins.generic.editorialStats.settings.showSubmissionsPerYear"
+msgstr "Tampilkan Pengajuan per Tahun"
+
+msgid "plugins.generic.editorialStats.settings.showPublishedPerSection"
+msgstr "Tampilkan Artikel Diterbitkan per Bagian"
