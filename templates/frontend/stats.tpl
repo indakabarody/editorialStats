@@ -1,5 +1,7 @@
 <div class="editorial-stats-plugin-container">
+	{if !$hideEsTitle}
 	<h2 class="es-title">{translate key="plugins.generic.editorialStats.title"}</h2>
+	{/if}
 	
 	<!-- Top Metric Boxes -->
 	<div class="es-grid">

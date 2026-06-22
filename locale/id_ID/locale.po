@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "plugins.generic.editorialStats.displayName"
-msgstr "Plugin Editorial Stats"
+msgstr "Editorial Stats"
 
 msgid "plugins.generic.editorialStats.description"
 msgstr "Menampilkan statistik editorial pada beranda jurnal."
@@ -97,3 +97,36 @@ msgstr "Tampilkan Pengajuan per Tahun"
 
 msgid "plugins.generic.editorialStats.settings.showPublishedPerSection"
 msgstr "Tampilkan Artikel Diterbitkan per Bagian"
+
+msgid "plugins.generic.editorialStats.displayMode"
+msgstr "Mode Tampilan"
+
+msgid "plugins.generic.editorialStats.displayMode.dashboard"
+msgstr "Hanya Dashboard"
+
+msgid "plugins.generic.editorialStats.displayMode.homepage"
+msgstr "Beranda"
+
+msgid "plugins.generic.editorialStats.displayMode.page"
+msgstr "Halaman Tersendiri"
+
+msgid "plugins.generic.editorialStats.metricsToDisplay"
+msgstr "Metrik yang Ditampilkan"
+
+msgid "plugins.generic.editorialStats.metric"
+msgstr "Metrik"
+
+msgid "plugins.generic.editorialStats.value"
+msgstr "Nilai"
+
+msgid "plugins.generic.editorialStats.section"
+msgstr "Bagian"
+
+msgid "plugins.generic.editorialStats.count"
+msgstr "Jumlah"
+
+msgid "plugins.generic.editorialStats.noData"
+msgstr "Tidak ada data yang tersedia."
+
+msgid "plugins.generic.editorialStats.year"
+msgstr "Tahun"

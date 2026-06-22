@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "plugins.generic.editorialStats.displayName"
-msgstr "Editorial Stats Plugin"
+msgstr "Editorial Stats"
 
 msgid "plugins.generic.editorialStats.description"
 msgstr "Displays editorial statistics on the journal homepage."
@@ -97,3 +97,36 @@ msgstr "Show Submissions Per Year"
 
 msgid "plugins.generic.editorialStats.settings.showPublishedPerSection"
 msgstr "Show Published Articles per Section"
+
+msgid "plugins.generic.editorialStats.displayMode"
+msgstr "Display Mode"
+
+msgid "plugins.generic.editorialStats.displayMode.dashboard"
+msgstr "Dashboard Only"
+
+msgid "plugins.generic.editorialStats.displayMode.homepage"
+msgstr "Homepage"
+
+msgid "plugins.generic.editorialStats.displayMode.page"
+msgstr "Separate Page"
+
+msgid "plugins.generic.editorialStats.metricsToDisplay"
+msgstr "Metrics to Display"
+
+msgid "plugins.generic.editorialStats.metric"
+msgstr "Metric"
+
+msgid "plugins.generic.editorialStats.value"
+msgstr "Value"
+
+msgid "plugins.generic.editorialStats.section"
+msgstr "Section"
+
+msgid "plugins.generic.editorialStats.count"
+msgstr "Count"
+
+msgid "plugins.generic.editorialStats.noData"
+msgstr "No data available."
+
+msgid "plugins.generic.editorialStats.year"
+msgstr "Year"

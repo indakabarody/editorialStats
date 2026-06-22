@@ -12,7 +12,12 @@
 	<p>{translate key="plugins.generic.editorialStats.settings.description"}</p>
 
 	{fbvFormArea id="editorialStatsSettings"}
-		{fbvFormSection list=true}
+		{fbvFormSection title="plugins.generic.editorialStats.displayMode" list=true}
+			{fbvElement type="radio" id="es_displayMode_dashboard" name="es_displayMode" value="dashboard" checked=$es_displayMode|compare:"dashboard" label="plugins.generic.editorialStats.displayMode.dashboard"}
+			{fbvElement type="radio" id="es_displayMode_homepage" name="es_displayMode" value="homepage" checked=$es_displayMode|compare:"homepage" label="plugins.generic.editorialStats.displayMode.homepage"}
+			{fbvElement type="radio" id="es_displayMode_page" name="es_displayMode" value="page" checked=$es_displayMode|compare:"page" label="plugins.generic.editorialStats.displayMode.page"}
+		{/fbvFormSection}
+		{fbvFormSection title="plugins.generic.editorialStats.metricsToDisplay" list=true}
 			{fbvElement type="checkbox" id="es_showTotalSubmissions" checked=$es_showTotalSubmissions label="plugins.generic.editorialStats.totalSubmissions"}
 			{fbvElement type="checkbox" id="es_showPublished" checked=$es_showPublished label="plugins.generic.editorialStats.published"}
 			{fbvElement type="checkbox" id="es_showInProgress" checked=$es_showInProgress label="plugins.generic.editorialStats.inProgress"}
