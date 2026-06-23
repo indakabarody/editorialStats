@@ -27,17 +27,18 @@ class EditorialStatsPlugin extends GenericPlugin
             $contextId = $context ? (int) $context->getId() : (int) $mainContextId;
 
             $displayMode = $this->getSetting($contextId, 'es_displayMode');
-            if (!$displayMode) {
-                $displayMode = 'homepage';
+            if (!is_array($displayMode)) {
+                $displayMode = $displayMode ? [$displayMode] : ['homepage'];
             }
 
-            if ($displayMode === 'homepage') {
+            if (in_array('homepage', $displayMode)) {
                 HookRegistry::register('Templates::Index::journal', [$this, 'displayStatsHomepage']);
-            } else {
+            }
+            if (in_array('page', $displayMode) || in_array('dashboard', $displayMode)) {
                 HookRegistry::register('LoadHandler', [$this, 'callbackHandleContent']);
-                if ($displayMode === 'dashboard') {
-                    HookRegistry::register('TemplateManager::setupBackendPage', [$this, 'setupBackendPage']);
-                }
+            }
+            if (in_array('dashboard', $displayMode)) {
+                HookRegistry::register('TemplateManager::setupBackendPage', [$this, 'setupBackendPage']);
             }
         }
         return $success;
@@ -46,10 +47,27 @@ class EditorialStatsPlugin extends GenericPlugin
     public function callbackHandleContent($hookName, $args)
     {
         $page = &$args[0];
-        if ($page === 'editorialStats') {
-            define('HANDLER_CLASS', 'EditorialStatsHandler');
-            $this->import('EditorialStatsHandler');
-            EditorialStatsHandler::setPlugin($this);
+        $op = &$args[1];
+        $request = Application::get()->getRequest();
+        $context = $request->getContext();
+        $contextId = $context ? (int) $context->getId() : 0;
+
+        if ($page === 'stats' && $op === 'editorialStats') {
+            define('HANDLER_CLASS', 'EditorialStatsBackendHandler');
+            $this->import('EditorialStatsBackendHandler');
+            EditorialStatsBackendHandler::setPlugin($this);
+            return true;
+        }
+
+        $customPath = $this->getSetting($contextId, 'es_customPath');
+        if (!$customPath) {
+            $customPath = 'editorialStats';
+        }
+
+        if ($page === $customPath || $page === 'editorialStats') {
+            define('HANDLER_CLASS', 'EditorialStatsFrontendHandler');
+            $this->import('EditorialStatsFrontendHandler');
+            EditorialStatsFrontendHandler::setPlugin($this);
             return true;
         }
         return false;
@@ -63,13 +81,25 @@ class EditorialStatsPlugin extends GenericPlugin
 
         if (isset($menu['statistics']['submenu'])) {
             $router = $request->getRouter();
-
-            $menu['statistics']['submenu']['editorialStats'] = [
+            $newItem = [
                 'name' => $this->getDisplayName(),
-                'url' => $router->url($request, null, 'editorialStats'),
-                'isCurrent' => $router->getRequestedPage($request) === 'editorialStats',
+                'url' => $router->url($request, null, 'stats', 'editorialStats'),
+                'isCurrent' => $router->getRequestedPage($request) === 'stats' && $router->getRequestedOp($request) === 'editorialStats',
             ];
 
+            $newSubmenu = [];
+            foreach ($menu['statistics']['submenu'] as $key => $item) {
+                $newSubmenu[$key] = $item;
+                if ($key === 'editorial') {
+                    $newSubmenu['editorialStats'] = $newItem;
+                }
+            }
+            
+            if (!isset($newSubmenu['editorialStats'])) {
+                $newSubmenu['editorialStats'] = $newItem;
+            }
+
+            $menu['statistics']['submenu'] = $newSubmenu;
             $templateMgr->setState(['menu' => $menu]);
         }
         return false;
@@ -297,6 +327,7 @@ class EditorialStatsPlugin extends GenericPlugin
             'es_showActiveReviewers' => $this->getSetting($contextId, 'es_showActiveReviewers') ?? true,
             'es_showSubmissionsPerYear' => $this->getSetting($contextId, 'es_showSubmissionsPerYear') ?? true,
             'es_showPublishedPerSection' => $this->getSetting($contextId, 'es_showPublishedPerSection') ?? true,
+            'es_theme' => $this->getSetting($contextId, 'es_theme') ?? 'modern',
         ]);
 
         $templatePath = $this->getTemplateResource('frontend/stats.tpl');

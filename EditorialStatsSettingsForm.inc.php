@@ -43,13 +43,25 @@ class EditorialStatsSettingsForm extends Form
         $contextId = $this->contextId;
 
         // Array of setting names
-        $settings = ['es_displayMode', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection'];
+        $settings = ['es_displayMode', 'es_customPath', 'es_theme', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection'];
 
         foreach ($settings as $settingName) {
             $value = $plugin->getSetting($contextId, $settingName);
             if ($settingName === 'es_displayMode') {
                 if ($value === null) {
-                    $value = 'homepage';
+                    $value = ['homepage'];
+                } elseif (!is_array($value)) {
+                    $value = [$value];
+                }
+                $this->setData($settingName, $value);
+            } elseif ($settingName === 'es_customPath') {
+                if ($value === null) {
+                    $value = 'editorialStats';
+                }
+                $this->setData($settingName, $value);
+            } elseif ($settingName === 'es_theme') {
+                if ($value === null) {
+                    $value = 'modern';
                 }
                 $this->setData($settingName, $value);
             } else {
@@ -67,7 +79,11 @@ class EditorialStatsSettingsForm extends Form
      */
     public function readInputData()
     {
-        $this->readUserVars(['es_displayMode', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection']);
+        $this->readUserVars(['es_displayMode', 'es_customPath', 'es_theme', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection']);
+        
+        if (!is_array($this->getData('es_displayMode'))) {
+            $this->setData('es_displayMode', []);
+        }
     }
 
     /**
@@ -78,6 +94,20 @@ class EditorialStatsSettingsForm extends Form
     {
         $templateMgr = TemplateManager::getManager($request);
         $templateMgr->assign('pluginName', $this->plugin->getName());
+        $templateMgr->assign('es_themes', [
+            'modern' => __('plugins.generic.editorialStats.theme.modern'),
+            'monochrome' => __('plugins.generic.editorialStats.theme.monochrome'),
+            'outline' => __('plugins.generic.editorialStats.theme.outline'),
+            'dark' => __('plugins.generic.editorialStats.theme.dark'),
+            'glassmorphism' => __('plugins.generic.editorialStats.theme.glassmorphism'),
+            'neumorphism' => __('plugins.generic.editorialStats.theme.neumorphism'),
+            'brutalism' => __('plugins.generic.editorialStats.theme.brutalism'),
+            'corporate' => __('plugins.generic.editorialStats.theme.corporate'),
+            'gradient' => __('plugins.generic.editorialStats.theme.gradient'),
+            'material' => __('plugins.generic.editorialStats.theme.material'),
+            'pastel' => __('plugins.generic.editorialStats.theme.pastel'),
+            'cyberpunk' => __('plugins.generic.editorialStats.theme.cyberpunk'),
+        ]);
         return parent::fetch($request, $template, $display);
     }
 
@@ -95,7 +125,19 @@ class EditorialStatsSettingsForm extends Form
             $plugin->updateSetting($contextId, $settingName, $this->getData($settingName) ? true : false, 'bool');
         }
 
-        $plugin->updateSetting($contextId, 'es_displayMode', $this->getData('es_displayMode'), 'string');
+        $displayMode = $this->getData('es_displayMode');
+        $plugin->updateSetting($contextId, 'es_displayMode', is_array($displayMode) ? $displayMode : [], 'object');
+        
+        $customPath = $this->getData('es_customPath');
+        // Sanitizing the path slightly
+        $customPath = preg_replace('/[^a-zA-Z0-9_\-]/', '', $customPath);
+        if (empty($customPath)) $customPath = 'editorialStats';
+        $plugin->updateSetting($contextId, 'es_customPath', $customPath, 'string');
+
+        $theme = $this->getData('es_theme');
+        $validThemes = ['modern', 'monochrome', 'outline', 'dark', 'glassmorphism', 'neumorphism', 'brutalism', 'corporate', 'gradient', 'material', 'pastel', 'cyberpunk'];
+        if (!in_array($theme, $validThemes)) $theme = 'modern';
+        $plugin->updateSetting($contextId, 'es_theme', $theme, 'string');
 
         parent::execute(...$functionArgs);
     }

@@ -1,17 +1,17 @@
 <?php
 /**
- * @file EditorialStatsHandler.inc.php
+ * @file EditorialStatsBackendHandler.inc.php
  *
  * Copyright (c) 2026 Indaka Barody
  * Distributed under the GNU GPL v3.
  *
- * @class EditorialStatsHandler
- * @brief Handle requests for editorial stats
+ * @class EditorialStatsBackendHandler
+ * @brief Handle requests for editorial stats on the backend dashboard
  */
 
 import('classes.handler.Handler');
 
-class EditorialStatsHandler extends Handler
+class EditorialStatsBackendHandler extends Handler
 {
     /** @var EditorialStatsPlugin The editorial stats plugin */
     static $plugin;
@@ -32,19 +32,8 @@ class EditorialStatsHandler extends Handler
     {
         parent::__construct();
 
-        $request = Application::get()->getRequest();
-        $context = $request->getContext();
-        if (!$context) {
-            return;
-        }
-
-        $contextId = (int) $context->getId();
-        $displayMode = self::$plugin->getSetting($contextId, 'es_displayMode');
-
-        if ($displayMode === 'dashboard') {
-            $this->_isBackendPage = true;
-            $this->addRoleAssignment([ROLE_ID_SITE_ADMIN, ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR], ['index']);
-        }
+        $this->_isBackendPage = true;
+        $this->addRoleAssignment([ROLE_ID_SITE_ADMIN, ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR], ['editorialStats']);
     }
 
     /**
@@ -52,18 +41,8 @@ class EditorialStatsHandler extends Handler
      */
     public function authorize($request, &$args, $roleAssignments)
     {
-        $context = $request->getContext();
-        if (!$context) {
-            return false;
-        }
-
-        $contextId = (int) $context->getId();
-        $displayMode = self::$plugin->getSetting($contextId, 'es_displayMode');
-
-        if ($displayMode === 'dashboard') {
-            import('lib.pkp.classes.security.authorization.ContextAccessPolicy');
-            $this->addPolicy(new ContextAccessPolicy($request, $roleAssignments));
-        }
+        import('lib.pkp.classes.security.authorization.ContextAccessPolicy');
+        $this->addPolicy(new ContextAccessPolicy($request, $roleAssignments));
 
         return parent::authorize($request, $args, $roleAssignments);
     }
@@ -73,7 +52,7 @@ class EditorialStatsHandler extends Handler
      * @param $args array Arguments array.
      * @param $request PKPRequest Request object.
      */
-    public function index($args, $request)
+    public function editorialStats($args, $request)
     {
         $context = $request->getContext();
         if (!$context) {
@@ -82,9 +61,11 @@ class EditorialStatsHandler extends Handler
 
         $contextId = (int) $context->getId();
         $displayMode = self::$plugin->getSetting($contextId, 'es_displayMode');
+        if (!is_array($displayMode)) {
+            $displayMode = $displayMode ? [$displayMode] : ['homepage'];
+        }
 
-        if ($displayMode === 'homepage') {
-            // If somehow accessed directly while in homepage mode, redirect
+        if (!in_array('dashboard', $displayMode)) {
             $request->redirect(null, 'index');
         }
 
@@ -110,14 +91,10 @@ class EditorialStatsHandler extends Handler
             'es_showActiveReviewers' => self::$plugin->getSetting($contextId, 'es_showActiveReviewers') ?? true,
             'es_showSubmissionsPerYear' => self::$plugin->getSetting($contextId, 'es_showSubmissionsPerYear') ?? true,
             'es_showPublishedPerSection' => self::$plugin->getSetting($contextId, 'es_showPublishedPerSection') ?? true,
+            'es_theme' => self::$plugin->getSetting($contextId, 'es_theme') ?? 'modern',
         ]);
 
-        if ($displayMode === 'dashboard') {
-            $templateMgr->assign('pageTitle', __('plugins.generic.editorialStats.title'));
-            $templateMgr->display(self::$plugin->getTemplateResource('backend/stats.tpl'));
-        } else {
-            // 'page'
-            $templateMgr->display(self::$plugin->getTemplateResource('frontend/stats_page.tpl'));
-        }
+        $templateMgr->assign('pageTitle', __('plugins.generic.editorialStats.title'));
+        $templateMgr->display(self::$plugin->getTemplateResource('backend/stats.tpl'));
     }
 }

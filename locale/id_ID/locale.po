@@ -66,7 +66,7 @@ msgid "plugins.generic.editorialStats.settings"
 msgstr "Pengaturan"
 
 msgid "plugins.generic.editorialStats.settings.description"
-msgstr "Pilih statistik mana saja yang ingin ditampilkan pada beranda jurnal."
+msgstr "Konfigurasi tampilan dan visibilitas statistik editorial jurnal Anda."
 
 msgid "plugins.generic.editorialStats.settings.showTotalSubmissions"
 msgstr "Tampilkan Total Pengajuan"
@@ -102,7 +102,7 @@ msgid "plugins.generic.editorialStats.displayMode"
 msgstr "Mode Tampilan"
 
 msgid "plugins.generic.editorialStats.displayMode.dashboard"
-msgstr "Hanya Dashboard"
+msgstr "Dashboard"
 
 msgid "plugins.generic.editorialStats.displayMode.homepage"
 msgstr "Beranda"
@@ -130,3 +130,57 @@ msgstr "Tidak ada data yang tersedia."
 
 msgid "plugins.generic.editorialStats.year"
 msgstr "Tahun"
+
+msgid "plugins.generic.editorialStats.customPath.label"
+msgstr "Kustomisasi Path"
+
+msgid "plugins.generic.editorialStats.customPath.description"
+msgstr "Tetapkan path kustom untuk halaman terpisah (hanya huruf, angka, garis bawah, dan tanda hubung). Defaultnya adalah 'editorialStats'."
+
+msgid "plugins.generic.editorialStats.urlAndTheme"
+msgstr "Konfigurasi URL & Tema"
+
+msgid "plugins.generic.editorialStats.customPath.linkInfo"
+msgstr "Halaman terpisah Anda dapat diakses melalui tautan ini:"
+
+msgid "plugins.generic.editorialStats.theme"
+msgstr "Tema Tampilan"
+
+msgid "plugins.generic.editorialStats.theme.description"
+msgstr "Pilih gaya visual untuk dasbor statistik."
+
+msgid "plugins.generic.editorialStats.theme.modern"
+msgstr "Modern (Warna-warni)"
+
+msgid "plugins.generic.editorialStats.theme.monochrome"
+msgstr "Monochrome (Minimalis)"
+
+msgid "plugins.generic.editorialStats.theme.outline"
+msgstr "Outline (Transparan)"
+
+msgid "plugins.generic.editorialStats.theme.dark"
+msgstr "Dark Mode (Gelap)"
+
+msgid "plugins.generic.editorialStats.theme.glassmorphism"
+msgstr "Glassmorphism (Kaca Buram)"
+
+msgid "plugins.generic.editorialStats.theme.neumorphism"
+msgstr "Neumorphism (Soft UI)"
+
+msgid "plugins.generic.editorialStats.theme.brutalism"
+msgstr "Brutalism (Retro Web)"
+
+msgid "plugins.generic.editorialStats.theme.corporate"
+msgstr "Corporate (Profesional Klasik)"
+
+msgid "plugins.generic.editorialStats.theme.gradient"
+msgstr "Gradient (Vibrant/Gradasi Cerah)"
+
+msgid "plugins.generic.editorialStats.theme.material"
+msgstr "Material Design"
+
+msgid "plugins.generic.editorialStats.theme.pastel"
+msgstr "Soft Pastel (Warna Lembut)"
+
+msgid "plugins.generic.editorialStats.theme.cyberpunk"
+msgstr "Cyberpunk (Neon Gelap)"

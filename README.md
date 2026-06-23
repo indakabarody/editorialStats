@@ -6,10 +6,12 @@ This plugin adds comprehensive **Editorial Statistics** to your OJS 3.3 installa
 
 - **Flexible Display Modes**: Choose where the statistics appear based on your journal's privacy needs:
   - **Homepage**: Displays beautifully formatted metric cards directly on the journal's homepage.
-  - **Separate Page**: Displays the stats on a dedicated public page (`/editorialStats`).
-  - **Dashboard Only**: Restricts access to the stats to Journal Managers, Site Admins, and Sub Editors inside the OJS backend dashboard.
-- **Adaptive UI**:
-  - In the frontend (Homepage/Separate Page), the stats are displayed using rich aesthetics with a colorful metric grid and an interactive Chart.js bar graph.
+  - **Separate Page**: Displays the stats on a dedicated public page with a **customizable URL path** (e.g., `/editorial-stats`).
+  - **Dashboard**: Restricts access to the stats to Journal Managers, Site Admins, and Sub Editors inside the OJS backend dashboard.
+- **12 Visual Themes**: 
+  - The public statistics dashboard includes **12 unique visual themes** to perfectly match your journal's design: *Modern, Monochrome, Outline, Dark Mode, Glassmorphism, Neumorphism, Brutalism, Corporate, Gradient, Material Design, Soft Pastel,* and *Cyberpunk*.
+  - You can instantly switch between these themes directly from the plugin settings.
+- **Adaptive Backend UI**:
   - In the backend (Dashboard), the stats automatically adapt to use OJS's native `pkpStats` and `pkpTable` components for a seamless, professional administrative experience.
 - **Toggleable Metrics**: Easily turn individual metrics on or off from the plugin's settings page.
 
@@ -26,7 +28,7 @@ This plugin adds comprehensive **Editorial Statistics** to your OJS 3.3 installa
 2. Log in as a Journal Manager or Site Administrator.
 3. Go to **Settings > Website > Plugins**.
 4. Enable the **Editorial Stats** plugin under the *Generic Plugins* section.
-5. Click the blue arrow next to the plugin name and select **Settings** to choose your preferred Display Mode and toggle specific metrics.
+5. Click the blue arrow next to the plugin name and select **Settings** to choose your preferred Display Mode, customize the URL path, select a Visual Theme, and toggle specific metrics.
 
 ## Language Support
 

@@ -66,7 +66,7 @@ msgid "plugins.generic.editorialStats.settings"
 msgstr "Settings"
 
 msgid "plugins.generic.editorialStats.settings.description"
-msgstr "Choose which statistics to display on the journal homepage."
+msgstr "Configure the display and visibility of your journal's editorial statistics."
 
 msgid "plugins.generic.editorialStats.settings.showTotalSubmissions"
 msgstr "Show Total Submissions"
@@ -102,7 +102,7 @@ msgid "plugins.generic.editorialStats.displayMode"
 msgstr "Display Mode"
 
 msgid "plugins.generic.editorialStats.displayMode.dashboard"
-msgstr "Dashboard Only"
+msgstr "Dashboard"
 
 msgid "plugins.generic.editorialStats.displayMode.homepage"
 msgstr "Homepage"
@@ -130,3 +130,57 @@ msgstr "No data available."
 
 msgid "plugins.generic.editorialStats.year"
 msgstr "Year"
+
+msgid "plugins.generic.editorialStats.customPath.label"
+msgstr "Custom Path"
+
+msgid "plugins.generic.editorialStats.customPath.description"
+msgstr "Set a custom path for the separate page (letters, numbers, underscores, and hyphens only). Default is 'editorialStats'."
+
+msgid "plugins.generic.editorialStats.urlAndTheme"
+msgstr "URL & Theme Configuration"
+
+msgid "plugins.generic.editorialStats.customPath.linkInfo"
+msgstr "Your separate page can be accessed via this link:"
+
+msgid "plugins.generic.editorialStats.theme"
+msgstr "Visual Theme"
+
+msgid "plugins.generic.editorialStats.theme.description"
+msgstr "Choose a visual style for the statistics dashboard."
+
+msgid "plugins.generic.editorialStats.theme.modern"
+msgstr "Modern (Colorful)"
+
+msgid "plugins.generic.editorialStats.theme.monochrome"
+msgstr "Monochrome (Minimalist)"
+
+msgid "plugins.generic.editorialStats.theme.outline"
+msgstr "Outline (Transparent)"
+
+msgid "plugins.generic.editorialStats.theme.dark"
+msgstr "Dark Mode"
+
+msgid "plugins.generic.editorialStats.theme.glassmorphism"
+msgstr "Glassmorphism (Frosted Glass)"
+
+msgid "plugins.generic.editorialStats.theme.neumorphism"
+msgstr "Neumorphism (Soft UI)"
+
+msgid "plugins.generic.editorialStats.theme.brutalism"
+msgstr "Brutalism (Retro Web)"
+
+msgid "plugins.generic.editorialStats.theme.corporate"
+msgstr "Corporate (Professional)"
+
+msgid "plugins.generic.editorialStats.theme.gradient"
+msgstr "Gradient (Vibrant)"
+
+msgid "plugins.generic.editorialStats.theme.material"
+msgstr "Material Design"
+
+msgid "plugins.generic.editorialStats.theme.pastel"
+msgstr "Soft Pastel"
+
+msgid "plugins.generic.editorialStats.theme.cyberpunk"
+msgstr "Cyberpunk (Neon)"
