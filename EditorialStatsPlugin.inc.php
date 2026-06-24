@@ -328,6 +328,8 @@ class EditorialStatsPlugin extends GenericPlugin
             'es_showSubmissionsPerYear' => $this->getSetting($contextId, 'es_showSubmissionsPerYear') ?? true,
             'es_showPublishedPerSection' => $this->getSetting($contextId, 'es_showPublishedPerSection') ?? true,
             'es_theme' => $this->getSetting($contextId, 'es_theme') ?? 'modern',
+            'es_chartColor' => $this->getSetting($contextId, 'es_chartColor') ?? '#3b82f6',
+            'esThemeTemplatePath' => $this->getTemplateResource('frontend/themes/' . ($this->getSetting($contextId, 'es_theme') ?? 'modern') . '.tpl'),
         ]);
 
         $templatePath = $this->getTemplateResource('frontend/stats.tpl');

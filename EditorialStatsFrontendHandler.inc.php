@@ -86,6 +86,8 @@ class EditorialStatsFrontendHandler extends Handler
             'es_showSubmissionsPerYear' => self::$plugin->getSetting($contextId, 'es_showSubmissionsPerYear') ?? true,
             'es_showPublishedPerSection' => self::$plugin->getSetting($contextId, 'es_showPublishedPerSection') ?? true,
             'es_theme' => self::$plugin->getSetting($contextId, 'es_theme') ?? 'modern',
+            'es_chartColor' => self::$plugin->getSetting($contextId, 'es_chartColor') ?? '#3b82f6',
+            'esThemeTemplatePath' => self::$plugin->getTemplateResource('frontend/themes/' . (self::$plugin->getSetting($contextId, 'es_theme') ?? 'modern') . '.tpl'),
         ]);
 
         $templateMgr->display(self::$plugin->getTemplateResource('frontend/stats_page.tpl'));

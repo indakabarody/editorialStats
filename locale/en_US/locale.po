@@ -15,7 +15,7 @@ msgid "plugins.generic.editorialStats.displayName"
 msgstr "Editorial Stats"
 
 msgid "plugins.generic.editorialStats.description"
-msgstr "Displays editorial statistics on the journal homepage."
+msgstr "Displays editorial statistics on the journal homepage, a separate page, and the backend dashboard with multiple themes and customizable metrics."
 
 msgid "plugins.generic.editorialStats.title"
 msgstr "Editorial Statistics"
@@ -184,3 +184,12 @@ msgstr "Soft Pastel"
 
 msgid "plugins.generic.editorialStats.theme.cyberpunk"
 msgstr "Cyberpunk (Neon)"
+
+msgid "plugins.generic.editorialStats.theme.elegant"
+msgstr "Elegant"
+
+msgid "plugins.generic.editorialStats.theme.playful"
+msgstr "Playful"
+
+msgid "plugins.generic.editorialStats.chartColor"
+msgstr "Chart Bar Color"

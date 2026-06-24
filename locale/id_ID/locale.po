@@ -15,7 +15,7 @@ msgid "plugins.generic.editorialStats.displayName"
 msgstr "Editorial Stats"
 
 msgid "plugins.generic.editorialStats.description"
-msgstr "Menampilkan statistik editorial pada beranda jurnal."
+msgstr "Menampilkan statistik editorial pada beranda jurnal, halaman terpisah, dan dasbor backend dengan berbagai tema dan metrik yang dapat disesuaikan."
 
 msgid "plugins.generic.editorialStats.title"
 msgstr "Statistik Editorial"
@@ -184,3 +184,12 @@ msgstr "Soft Pastel (Warna Lembut)"
 
 msgid "plugins.generic.editorialStats.theme.cyberpunk"
 msgstr "Cyberpunk (Neon Gelap)"
+
+msgid "plugins.generic.editorialStats.theme.elegant"
+msgstr "Elegan"
+
+msgid "plugins.generic.editorialStats.theme.playful"
+msgstr "Playful (Ceria)"
+
+msgid "plugins.generic.editorialStats.chartColor"
+msgstr "Warna Bar Grafik"

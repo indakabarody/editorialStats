@@ -43,7 +43,7 @@ class EditorialStatsSettingsForm extends Form
         $contextId = $this->contextId;
 
         // Array of setting names
-        $settings = ['es_displayMode', 'es_customPath', 'es_theme', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection'];
+        $settings = ['es_displayMode', 'es_customPath', 'es_theme', 'es_chartColor', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection'];
 
         foreach ($settings as $settingName) {
             $value = $plugin->getSetting($contextId, $settingName);
@@ -60,10 +60,9 @@ class EditorialStatsSettingsForm extends Form
                 }
                 $this->setData($settingName, $value);
             } elseif ($settingName === 'es_theme') {
-                if ($value === null) {
-                    $value = 'modern';
-                }
-                $this->setData($settingName, $value);
+                $this->setData($settingName, $value ?? 'modern');
+            } elseif ($settingName === 'es_chartColor') {
+                $this->setData($settingName, $value ?? '#3b82f6');
             } else {
                 // Default to true if not set
                 if ($value === null) {
@@ -79,7 +78,7 @@ class EditorialStatsSettingsForm extends Form
      */
     public function readInputData()
     {
-        $this->readUserVars(['es_displayMode', 'es_customPath', 'es_theme', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection']);
+        $this->readUserVars(['es_displayMode', 'es_customPath', 'es_theme', 'es_chartColor', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection']);
         
         if (!is_array($this->getData('es_displayMode'))) {
             $this->setData('es_displayMode', []);
@@ -107,6 +106,8 @@ class EditorialStatsSettingsForm extends Form
             'material' => __('plugins.generic.editorialStats.theme.material'),
             'pastel' => __('plugins.generic.editorialStats.theme.pastel'),
             'cyberpunk' => __('plugins.generic.editorialStats.theme.cyberpunk'),
+            'elegant' => __('plugins.generic.editorialStats.theme.elegant'),
+            'playful' => __('plugins.generic.editorialStats.theme.playful'),
         ]);
         return parent::fetch($request, $template, $display);
     }
@@ -135,9 +136,13 @@ class EditorialStatsSettingsForm extends Form
         $plugin->updateSetting($contextId, 'es_customPath', $customPath, 'string');
 
         $theme = $this->getData('es_theme');
-        $validThemes = ['modern', 'monochrome', 'outline', 'dark', 'glassmorphism', 'neumorphism', 'brutalism', 'corporate', 'gradient', 'material', 'pastel', 'cyberpunk'];
+        $validThemes = ['modern', 'monochrome', 'outline', 'dark', 'glassmorphism', 'neumorphism', 'brutalism', 'corporate', 'gradient', 'material', 'pastel', 'cyberpunk', 'elegant', 'playful'];
         if (!in_array($theme, $validThemes)) $theme = 'modern';
         $plugin->updateSetting($contextId, 'es_theme', $theme, 'string');
+
+        $chartColor = $this->getData('es_chartColor');
+        if (empty($chartColor)) $chartColor = '#3b82f6';
+        $plugin->updateSetting($contextId, 'es_chartColor', $chartColor, 'string');
 
         parent::execute(...$functionArgs);
     }
