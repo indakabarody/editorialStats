@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale.xml
+  *
+  * Copyright (c) 2026 Indaka Barody
+  * Distributed under the GNU GPL v3.
+  *
+  * Localization strings.
+  -->
+
+<locale name="en_US" full_name="English">
+	<message key="plugins.generic.editorialStats.displayName">Editorial Stats</message>
+	<message key="plugins.generic.editorialStats.description">Displays editorial statistics on the journal homepage, a separate page, and the backend dashboard with multiple themes and customizable metrics.</message>
+	<message key="plugins.generic.editorialStats.title">Editorial Statistics</message>
+	<message key="plugins.generic.editorialStats.totalSubmissions">Total Submissions</message>
+	<message key="plugins.generic.editorialStats.published">Published</message>
+	<message key="plugins.generic.editorialStats.inProgress">In Progress</message>
+	<message key="plugins.generic.editorialStats.declined">Declined</message>
+	<message key="plugins.generic.editorialStats.acceptanceRate">Acceptance Rate</message>
+	<message key="plugins.generic.editorialStats.avgDaysToPublish">Avg. Days to Publish</message>
+	<message key="plugins.generic.editorialStats.reviewsCompleted">Reviews Completed</message>
+	<message key="plugins.generic.editorialStats.activeReviewers">Active Reviewers</message>
+	<message key="plugins.generic.editorialStats.submissionsPerYear">Submissions Per Year</message>
+	<message key="plugins.generic.editorialStats.publishedPerSection">Published Articles per Section</message>
+	<message key="plugins.generic.editorialStats.section">Section</message>
+	<message key="plugins.generic.editorialStats.count">Count</message>
+	<message key="plugins.generic.editorialStats.submissions">Submissions</message>
+	<message key="plugins.generic.editorialStats.noData">No data available.</message>
+	<message key="plugins.generic.editorialStats.settings">Settings</message>
+	<message key="plugins.generic.editorialStats.settings.description">Configure the display and visibility of your journal's editorial statistics.</message>
+	<message key="plugins.generic.editorialStats.settings.showTotalSubmissions">Show Total Submissions</message>
+	<message key="plugins.generic.editorialStats.settings.showPublished">Show Published</message>
+	<message key="plugins.generic.editorialStats.settings.showInProgress">Show In Progress</message>
+	<message key="plugins.generic.editorialStats.settings.showDeclined">Show Declined</message>
+	<message key="plugins.generic.editorialStats.settings.showAcceptanceRate">Show Acceptance Rate</message>
+	<message key="plugins.generic.editorialStats.settings.showAvgDaysToPublish">Show Avg. Days to Publish</message>
+	<message key="plugins.generic.editorialStats.settings.showReviewsCompleted">Show Reviews Completed</message>
+	<message key="plugins.generic.editorialStats.settings.showActiveReviewers">Show Active Reviewers</message>
+	<message key="plugins.generic.editorialStats.settings.showSubmissionsPerYear">Show Submissions Per Year</message>
+	<message key="plugins.generic.editorialStats.settings.showPublishedPerSection">Show Published Articles per Section</message>
+	<message key="plugins.generic.editorialStats.displayMode">Display Mode</message>
+	<message key="plugins.generic.editorialStats.displayMode.dashboard">Dashboard</message>
+	<message key="plugins.generic.editorialStats.displayMode.homepage">Homepage</message>
+	<message key="plugins.generic.editorialStats.displayMode.page">Separate Page</message>
+	<message key="plugins.generic.editorialStats.metricsToDisplay">Metrics to Display</message>
+	<message key="plugins.generic.editorialStats.metric">Metric</message>
+	<message key="plugins.generic.editorialStats.value">Value</message>
+	<message key="plugins.generic.editorialStats.year">Year</message>
+	<message key="plugins.generic.editorialStats.customPath.label">Custom Path</message>
+	<message key="plugins.generic.editorialStats.customPath.description">Set a custom path for the separate page (letters, numbers, underscores, and hyphens only). Default is 'editorialStats'.</message>
+	<message key="plugins.generic.editorialStats.urlAndTheme">URL &amp; Theme Configuration</message>
+	<message key="plugins.generic.editorialStats.customPath.linkInfo">Your separate page can be accessed via this link:</message>
+	<message key="plugins.generic.editorialStats.theme">Visual Theme</message>
+	<message key="plugins.generic.editorialStats.theme.description">Choose a visual style for the statistics dashboard.</message>
+	<message key="plugins.generic.editorialStats.theme.modern">Modern (Colorful)</message>
+	<message key="plugins.generic.editorialStats.theme.monochrome">Monochrome (Minimalist)</message>
+	<message key="plugins.generic.editorialStats.theme.outline">Outline (Transparent)</message>
+	<message key="plugins.generic.editorialStats.theme.dark">Dark Mode</message>
+	<message key="plugins.generic.editorialStats.theme.glassmorphism">Glassmorphism (Frosted Glass)</message>
+	<message key="plugins.generic.editorialStats.theme.neumorphism">Neumorphism (Soft UI)</message>
+	<message key="plugins.generic.editorialStats.theme.brutalism">Brutalism (Retro Web)</message>
+	<message key="plugins.generic.editorialStats.theme.corporate">Corporate (Professional)</message>
+	<message key="plugins.generic.editorialStats.theme.gradient">Gradient (Vibrant)</message>
+	<message key="plugins.generic.editorialStats.theme.material">Material Design</message>
+	<message key="plugins.generic.editorialStats.theme.pastel">Soft Pastel</message>
+	<message key="plugins.generic.editorialStats.theme.cyberpunk">Cyberpunk (Neon)</message>
+	<message key="plugins.generic.editorialStats.theme.elegant">Elegant</message>
+	<message key="plugins.generic.editorialStats.theme.playful">Playful</message>
+	<message key="plugins.generic.editorialStats.chartColor">Chart Bar Color</message>
+	<message key="plugins.generic.editorialStats.updateFrequency">Update Frequency</message>
+	<message key="plugins.generic.editorialStats.updateFrequency.always">Always (No cache)</message>
+	<message key="plugins.generic.editorialStats.updateFrequency.daily">Daily</message>
+	<message key="plugins.generic.editorialStats.updateFrequency.weekly">Weekly</message>
+	<message key="plugins.generic.editorialStats.updateFrequency.monthly">Monthly</message>
+</locale>

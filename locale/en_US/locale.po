@@ -193,3 +193,18 @@ msgstr "Playful"
 
 msgid "plugins.generic.editorialStats.chartColor"
 msgstr "Chart Bar Color"
+
+msgid "plugins.generic.editorialStats.updateFrequency"
+msgstr "Update Frequency"
+
+msgid "plugins.generic.editorialStats.updateFrequency.always"
+msgstr "Always (No cache)"
+
+msgid "plugins.generic.editorialStats.updateFrequency.daily"
+msgstr "Daily"
+
+msgid "plugins.generic.editorialStats.updateFrequency.weekly"
+msgstr "Weekly"
+
+msgid "plugins.generic.editorialStats.updateFrequency.monthly"
+msgstr "Monthly"

@@ -10,9 +10,15 @@
 
 	{fbvFormArea id="editorialStatsSettings"}
 		{fbvFormSection title="plugins.generic.editorialStats.displayMode" list=true}
-			{fbvElement type="checkbox" id="es_displayMode_dashboard" name="es_displayMode[]" value="dashboard" checked=in_array('dashboard', $es_displayMode) label="plugins.generic.editorialStats.displayMode.dashboard"}
+			{if $isOJS33OrLater}
+				{fbvElement type="checkbox" id="es_displayMode_dashboard" name="es_displayMode[]" value="dashboard" checked=in_array('dashboard', $es_displayMode) label="plugins.generic.editorialStats.displayMode.dashboard"}
+			{/if}
 			{fbvElement type="checkbox" id="es_displayMode_homepage" name="es_displayMode[]" value="homepage" checked=in_array('homepage', $es_displayMode) label="plugins.generic.editorialStats.displayMode.homepage"}
 			{fbvElement type="checkbox" id="es_displayMode_page" name="es_displayMode[]" value="page" checked=in_array('page', $es_displayMode) label="plugins.generic.editorialStats.displayMode.page"}
+		{/fbvFormSection}
+
+		{fbvFormSection title="plugins.generic.editorialStats.updateFrequency"}
+			{fbvElement type="select" id="es_updateFrequency" name="es_updateFrequency" from=$es_frequencies selected=$es_updateFrequency translate=false}
 		{/fbvFormSection}
 
 		<div id="es_customPath_wrapper" {if !in_array('page', $es_displayMode)}style="display:none;"{/if}>

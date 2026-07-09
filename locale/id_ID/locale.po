@@ -193,3 +193,18 @@ msgstr "Playful (Ceria)"
 
 msgid "plugins.generic.editorialStats.chartColor"
 msgstr "Warna Bar Grafik"
+
+msgid "plugins.generic.editorialStats.updateFrequency"
+msgstr "Frekuensi Pembaruan"
+
+msgid "plugins.generic.editorialStats.updateFrequency.always"
+msgstr "Selalu (Tanpa cache)"
+
+msgid "plugins.generic.editorialStats.updateFrequency.daily"
+msgstr "Harian"
+
+msgid "plugins.generic.editorialStats.updateFrequency.weekly"
+msgstr "Mingguan"
+
+msgid "plugins.generic.editorialStats.updateFrequency.monthly"
+msgstr "Bulanan"

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale.xml
+  *
+  * Copyright (c) 2026 Indaka Barody
+  * Distributed under the GNU GPL v3.
+  *
+  * Localization strings.
+  -->
+
+<locale name="id_ID" full_name="Indonesian">
+	<message key="plugins.generic.editorialStats.displayName">Editorial Stats</message>
+	<message key="plugins.generic.editorialStats.description">Menampilkan statistik editorial pada beranda jurnal, halaman terpisah, dan dasbor backend dengan berbagai tema dan metrik yang dapat disesuaikan.</message>
+	<message key="plugins.generic.editorialStats.title">Statistik Editorial</message>
+	<message key="plugins.generic.editorialStats.totalSubmissions">Total Pengajuan</message>
+	<message key="plugins.generic.editorialStats.published">Diterbitkan</message>
+	<message key="plugins.generic.editorialStats.inProgress">Sedang Berjalan</message>
+	<message key="plugins.generic.editorialStats.declined">Ditolak</message>
+	<message key="plugins.generic.editorialStats.acceptanceRate">Tingkat Penerimaan</message>
+	<message key="plugins.generic.editorialStats.avgDaysToPublish">Rata-rata Hari Diterbitkan</message>
+	<message key="plugins.generic.editorialStats.reviewsCompleted">Ulasan Selesai</message>
+	<message key="plugins.generic.editorialStats.activeReviewers">Reviewer Aktif</message>
+	<message key="plugins.generic.editorialStats.submissionsPerYear">Pengajuan per Tahun</message>
+	<message key="plugins.generic.editorialStats.publishedPerSection">Artikel Diterbitkan per Bagian</message>
+	<message key="plugins.generic.editorialStats.section">Bagian</message>
+	<message key="plugins.generic.editorialStats.count">Jumlah</message>
+	<message key="plugins.generic.editorialStats.submissions">Pengajuan</message>
+	<message key="plugins.generic.editorialStats.noData">Tidak ada data yang tersedia.</message>
+	<message key="plugins.generic.editorialStats.settings">Pengaturan</message>
+	<message key="plugins.generic.editorialStats.settings.description">Konfigurasi tampilan dan visibilitas statistik editorial jurnal Anda.</message>
+	<message key="plugins.generic.editorialStats.settings.showTotalSubmissions">Tampilkan Total Pengajuan</message>
+	<message key="plugins.generic.editorialStats.settings.showPublished">Tampilkan Diterbitkan</message>
+	<message key="plugins.generic.editorialStats.settings.showInProgress">Tampilkan Sedang Berjalan</message>
+	<message key="plugins.generic.editorialStats.settings.showDeclined">Tampilkan Ditolak</message>
+	<message key="plugins.generic.editorialStats.settings.showAcceptanceRate">Tampilkan Tingkat Penerimaan</message>
+	<message key="plugins.generic.editorialStats.settings.showAvgDaysToPublish">Tampilkan Rata-rata Hari Diterbitkan</message>
+	<message key="plugins.generic.editorialStats.settings.showReviewsCompleted">Tampilkan Ulasan Selesai</message>
+	<message key="plugins.generic.editorialStats.settings.showActiveReviewers">Tampilkan Reviewer Aktif</message>
+	<message key="plugins.generic.editorialStats.settings.showSubmissionsPerYear">Tampilkan Pengajuan per Tahun</message>
+	<message key="plugins.generic.editorialStats.settings.showPublishedPerSection">Tampilkan Artikel Diterbitkan per Bagian</message>
+	<message key="plugins.generic.editorialStats.displayMode">Mode Tampilan</message>
+	<message key="plugins.generic.editorialStats.displayMode.dashboard">Dashboard</message>
+	<message key="plugins.generic.editorialStats.displayMode.homepage">Beranda</message>
+	<message key="plugins.generic.editorialStats.displayMode.page">Halaman Tersendiri</message>
+	<message key="plugins.generic.editorialStats.metricsToDisplay">Metrik yang Ditampilkan</message>
+	<message key="plugins.generic.editorialStats.metric">Metrik</message>
+	<message key="plugins.generic.editorialStats.value">Nilai</message>
+	<message key="plugins.generic.editorialStats.year">Tahun</message>
+	<message key="plugins.generic.editorialStats.customPath.label">Kustomisasi Path</message>
+	<message key="plugins.generic.editorialStats.customPath.description">Tetapkan path kustom untuk halaman terpisah (hanya huruf, angka, garis bawah, dan tanda hubung). Defaultnya adalah 'editorialStats'.</message>
+	<message key="plugins.generic.editorialStats.urlAndTheme">Konfigurasi URL &amp; Tema</message>
+	<message key="plugins.generic.editorialStats.customPath.linkInfo">Halaman terpisah Anda dapat diakses melalui tautan ini:</message>
+	<message key="plugins.generic.editorialStats.theme">Tema Tampilan</message>
+	<message key="plugins.generic.editorialStats.theme.description">Pilih gaya visual untuk dasbor statistik.</message>
+	<message key="plugins.generic.editorialStats.theme.modern">Modern (Warna-warni)</message>
+	<message key="plugins.generic.editorialStats.theme.monochrome">Monochrome (Minimalis)</message>
+	<message key="plugins.generic.editorialStats.theme.outline">Outline (Transparan)</message>
+	<message key="plugins.generic.editorialStats.theme.dark">Dark Mode (Gelap)</message>
+	<message key="plugins.generic.editorialStats.theme.glassmorphism">Glassmorphism (Kaca Buram)</message>
+	<message key="plugins.generic.editorialStats.theme.neumorphism">Neumorphism (Soft UI)</message>
+	<message key="plugins.generic.editorialStats.theme.brutalism">Brutalism (Retro Web)</message>
+	<message key="plugins.generic.editorialStats.theme.corporate">Corporate (Profesional Klasik)</message>
+	<message key="plugins.generic.editorialStats.theme.gradient">Gradient (Vibrant/Gradasi Cerah)</message>
+	<message key="plugins.generic.editorialStats.theme.material">Material Design</message>
+	<message key="plugins.generic.editorialStats.theme.pastel">Soft Pastel (Warna Lembut)</message>
+	<message key="plugins.generic.editorialStats.theme.cyberpunk">Cyberpunk (Neon Gelap)</message>
+	<message key="plugins.generic.editorialStats.theme.elegant">Elegan</message>
+	<message key="plugins.generic.editorialStats.theme.playful">Playful (Ceria)</message>
+	<message key="plugins.generic.editorialStats.chartColor">Warna Bar Grafik</message>
+	<message key="plugins.generic.editorialStats.updateFrequency">Frekuensi Pembaruan</message>
+	<message key="plugins.generic.editorialStats.updateFrequency.always">Selalu (Tanpa cache)</message>
+	<message key="plugins.generic.editorialStats.updateFrequency.daily">Harian</message>
+	<message key="plugins.generic.editorialStats.updateFrequency.weekly">Mingguan</message>
+	<message key="plugins.generic.editorialStats.updateFrequency.monthly">Bulanan</message>
+</locale>

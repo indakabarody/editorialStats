@@ -43,7 +43,7 @@ class EditorialStatsSettingsForm extends Form
         $contextId = $this->contextId;
 
         // Array of setting names
-        $settings = ['es_displayMode', 'es_customPath', 'es_theme', 'es_chartColor', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection'];
+        $settings = ['es_displayMode', 'es_customPath', 'es_theme', 'es_chartColor', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection', 'es_updateFrequency'];
 
         foreach ($settings as $settingName) {
             $value = $plugin->getSetting($contextId, $settingName);
@@ -63,6 +63,8 @@ class EditorialStatsSettingsForm extends Form
                 $this->setData($settingName, $value ?? 'modern');
             } elseif ($settingName === 'es_chartColor') {
                 $this->setData($settingName, $value ?? '#3b82f6');
+            } elseif ($settingName === 'es_updateFrequency') {
+                $this->setData($settingName, $value ?? 'always');
             } else {
                 // Default to true if not set
                 if ($value === null) {
@@ -78,8 +80,8 @@ class EditorialStatsSettingsForm extends Form
      */
     public function readInputData()
     {
-        $this->readUserVars(['es_displayMode', 'es_customPath', 'es_theme', 'es_chartColor', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection']);
-        
+        $this->readUserVars(['es_displayMode', 'es_customPath', 'es_theme', 'es_chartColor', 'es_showTotalSubmissions', 'es_showPublished', 'es_showInProgress', 'es_showDeclined', 'es_showAcceptanceRate', 'es_showAvgDaysToPublish', 'es_showReviewsCompleted', 'es_showActiveReviewers', 'es_showSubmissionsPerYear', 'es_showPublishedPerSection', 'es_updateFrequency']);
+
         if (!is_array($this->getData('es_displayMode'))) {
             $this->setData('es_displayMode', []);
         }
@@ -92,6 +94,12 @@ class EditorialStatsSettingsForm extends Form
     public function fetch($request, $template = null, $display = false)
     {
         $templateMgr = TemplateManager::getManager($request);
+        
+        $versionDao = DAORegistry::getDAO('VersionDAO');
+        $currentVersion = $versionDao->getCurrentVersion();
+        $isOJS33OrLater = ($currentVersion->getMajor() >= 3 && $currentVersion->getMinor() >= 3);
+        $templateMgr->assign('isOJS33OrLater', $isOJS33OrLater);
+        
         $templateMgr->assign('pluginName', $this->plugin->getName());
         $templateMgr->assign('es_themes', [
             'modern' => __('plugins.generic.editorialStats.theme.modern'),
@@ -109,6 +117,13 @@ class EditorialStatsSettingsForm extends Form
             'elegant' => __('plugins.generic.editorialStats.theme.elegant'),
             'playful' => __('plugins.generic.editorialStats.theme.playful'),
         ]);
+        $templateMgr->assign('es_frequencies', [
+            'always' => __('plugins.generic.editorialStats.updateFrequency.always'),
+            'daily' => __('plugins.generic.editorialStats.updateFrequency.daily'),
+            'weekly' => __('plugins.generic.editorialStats.updateFrequency.weekly'),
+            'monthly' => __('plugins.generic.editorialStats.updateFrequency.monthly'),
+        ]);
+
         return parent::fetch($request, $template, $display);
     }
 
@@ -128,21 +143,34 @@ class EditorialStatsSettingsForm extends Form
 
         $displayMode = $this->getData('es_displayMode');
         $plugin->updateSetting($contextId, 'es_displayMode', is_array($displayMode) ? $displayMode : [], 'object');
-        
+
         $customPath = $this->getData('es_customPath');
         // Sanitizing the path slightly
         $customPath = preg_replace('/[^a-zA-Z0-9_\-]/', '', $customPath);
-        if (empty($customPath)) $customPath = 'editorialStats';
+        if (empty($customPath)) {
+            $customPath = 'editorialStats';
+        }
         $plugin->updateSetting($contextId, 'es_customPath', $customPath, 'string');
 
         $theme = $this->getData('es_theme');
         $validThemes = ['modern', 'monochrome', 'outline', 'dark', 'glassmorphism', 'neumorphism', 'brutalism', 'corporate', 'gradient', 'material', 'pastel', 'cyberpunk', 'elegant', 'playful'];
-        if (!in_array($theme, $validThemes)) $theme = 'modern';
+        if (!in_array($theme, $validThemes)) {
+            $theme = 'modern';
+        }
         $plugin->updateSetting($contextId, 'es_theme', $theme, 'string');
 
         $chartColor = $this->getData('es_chartColor');
-        if (empty($chartColor)) $chartColor = '#3b82f6';
+        if (empty($chartColor)) {
+            $chartColor = '#3b82f6';
+        }
         $plugin->updateSetting($contextId, 'es_chartColor', $chartColor, 'string');
+
+        $updateFrequency = $this->getData('es_updateFrequency');
+        $validFrequencies = ['always', 'daily', 'weekly', 'monthly'];
+        if (!in_array($updateFrequency, $validFrequencies)) {
+            $updateFrequency = 'always';
+        }
+        $plugin->updateSetting($contextId, 'es_updateFrequency', $updateFrequency, 'string');
 
         parent::execute(...$functionArgs);
     }
